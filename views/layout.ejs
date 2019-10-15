@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="theme-color" content="#00ACC1">
+  <!-- icon -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+  <title>Análise de Sentimento</title>
+</head>
+<body>
+  <noscript>
+    <strong>We're sorry but this page doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+  </noscript>
+
+  <div id="app">
+    <v-app>
+      <nav>
+        <v-app-bar app class="cyan darken-1">
+          <v-app-bar-nav-icon
+            @click="draw"
+            class="white--text"
+          ></v-app-bar-nav-icon>
+      
+          <v-toolbar-title class="text-uppercase white--text">
+            <span class="font-weight-light">Análise de </span>
+            <span>Sentimento</span>
+          </v-toolbar-title>
+      
+          <v-spacer></v-spacer>
+      
+          <v-btn icon>
+            <v-icon class="white--text" @click="showInfo">info</v-icon>
+          </v-btn>
+        </v-app-bar>
+
+        <v-navigation-drawer app v-model="drawer" class="cyan darken-1">
+          <v-list shaped>
+            <v-list-item
+              v-for="link in links"
+              :key="link.text"
+              router
+              :to="link.route"
+            >
+              <v-list-item-avatar>
+                <v-icon class="white--text">{{ link.icon }}</v-icon>
+              </v-list-item-avatar>
+              <v-list-item-title class="white--text">{{ link.text }}</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-navigation-drawer>
+
+        <v-dialog v-model="dialog" width="400">
+          <v-card>
+            <v-col align="center">
+              <v-card-text>
+                Criado por: Thiago Suzuqui, André Luiz, João Luiz<br/>
+                Repositório: <a href="https://github.com/thszk/SentimentAnalysis" target="_blank">SentimentAnalysis</a>
+              </v-card-text>
+              <v-btn rounded @click="hideInfo" class="cyan darken-1 white--text">OK</v-btn>
+            </v-col>
+          </v-card>
+        </v-dialog>
+      </nav>
+      
+      <v-content class="mx-10 mt-10">
+        <v-card class="px-6 py-6" style="height: 600px; text-align: center">
+          <div>
+            <%- card %>
+          </div>
+        </v-card>
+        
+      </v-content>
+    </v-app>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      vuetify: new Vuetify(),
+      data() {
+        return {
+          drawer: false,
+          links: [
+            { icon: "home", text: "Home", route: "/" },
+            { icon: "sentiment_satisfied_alt", text: "Não Sei", route: "/regular" },
+            { icon: "sentiment_satisfied_alt", text: "Sei Lá", route: "/conectar" }
+          ],
+          dialog: false,
+        }
+      },
+      methods: {
+        draw() {
+          this.drawer = !this.drawer;
+        },
+        showInfo() {
+          this.dialog = true;
+        },
+        hideInfo() {
+          this.dialog = false;
+        }
+      }
+    })
+  </script>
+</body>
+</html>
