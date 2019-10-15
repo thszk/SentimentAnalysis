@@ -18,7 +18,7 @@ app.listen(port, () => {
 
 
 app.get("/", (req, res) => {
-  res.render("pages/index", {
+  res.render("pages/home", {
     output: "",
     input: ""
   })
