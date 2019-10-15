@@ -24,6 +24,12 @@ while True:
         break
 
 obj = TextBlob(line)
+language = obj.detect_language()
+if language != "en":
+  obj = obj.translate(from_lang= language, to='en')
+
+print(obj + " | ")
+
 # returns the sentiment of text
 # by returning a value between -1.0 and 1.0
 sentiment = obj.sentiment.polarity
