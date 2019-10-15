@@ -26,8 +26,10 @@
           ></v-app-bar-nav-icon>
       
           <v-toolbar-title class="text-uppercase white--text">
-            <span class="font-weight-light">Análise de </span>
-            <span>Sentimento</span>
+            <v-btn href="/" text rounded x-large>
+              <span class="font-weight-light">Análise de </span>
+              <span>Sentimento</span>
+            </v-btn>
           </v-toolbar-title>
       
           <v-spacer></v-spacer>
@@ -92,6 +94,7 @@
             { icon: "sentiment_satisfied_alt", text: "Sei Lá", route: "/conectar" }
           ],
           dialog: false,
+          input: "<%= input %>",
         }
       },
       methods: {
@@ -101,6 +104,9 @@
         info() {
           this.dialog = !this.dialog;
         },
+        analyze() {
+          window.location.href = `/freeText/${this.input}` 
+        }
       }
     })
   </script>
