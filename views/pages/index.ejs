@@ -1,6 +1,23 @@
 <%- contentFor('card') %>
 <div>
-  <v-card-title>Card</v-card-title>
+  <v-card-title>Análise de frase simples</v-card-title>
 
-  <v-card-content><%= output %></v-card-content>
+  <v-card-text class="mb-6">
+    <v-textarea
+      class="mt-4 mb-10"
+      label="Insira a frase"
+    ></v-textarea>
+  
+    <!-- {{output}} -->
+    <%= output %>
+  </v-card-text>
+
+  <v-card-actions>
+    <v-spacer></v-spacer>
+    <v-btn
+      class="cyan darken-1 white--text"
+      rounded
+    >Analisar</v-btn>
+    <v-spacer></v-spacer>
+  </v-card-actions>
 </div>
