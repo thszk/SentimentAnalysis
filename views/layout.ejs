@@ -33,7 +33,7 @@
           <v-spacer></v-spacer>
       
           <v-btn icon>
-            <v-icon class="white--text" @click="showInfo">info</v-icon>
+            <v-icon class="white--text" @click="info">info</v-icon>
           </v-btn>
         </v-app-bar>
 
@@ -60,7 +60,7 @@
                 Criado por: Thiago Suzuqui, André Luiz, João Luiz<br/>
                 Repositório: <a href="https://github.com/thszk/SentimentAnalysis" target="_blank">SentimentAnalysis</a>
               </v-card-text>
-              <v-btn rounded @click="hideInfo" class="cyan darken-1 white--text">OK</v-btn>
+              <v-btn rounded @click="info" class="cyan darken-1 white--text">OK</v-btn>
             </v-col>
           </v-card>
         </v-dialog>
@@ -98,12 +98,9 @@
         draw() {
           this.drawer = !this.drawer;
         },
-        showInfo() {
-          this.dialog = true;
+        info() {
+          this.dialog = !this.dialog;
         },
-        hideInfo() {
-          this.dialog = false;
-        }
       }
     })
   </script>
