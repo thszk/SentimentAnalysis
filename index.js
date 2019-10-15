@@ -26,7 +26,3 @@ app.get("/", (req, res) => {
     })
   })
 })
-
-app.get("/dev", (req, res) => {
-  res.render("pages/dev")
-})
