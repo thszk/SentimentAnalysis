@@ -18,8 +18,7 @@ app.listen(port, () => {
 app.get("/", (req, res) => {
   exec(path.resolve("./src/main.py"), (error, stdout) => {
     let out
-    if (error) out = "erro"  
-    else out = stdout
+    error ? out = "erro" : out = stdout.split()
 
     res.render("pages/index", {
       output: out
