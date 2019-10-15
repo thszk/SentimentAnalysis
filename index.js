@@ -24,13 +24,20 @@ app.get("/", (req, res) => {
   })
 })
 
+app.get("/freeText", (req, res) => {
+  res.render("pages/freeText", {
+    output: "",
+    input: ""
+  })
+})
+
 app.get("/freeText/:input", (req, res) => {
   let input = JSON.stringify(req.params.input.replace(/%0D%0A/g,"\n")).replace(/\"/g,"")
   
   exec(`echo "${input}" | ${path.resolve("./src/main.py")}`, (error, stdout) => {
     let output
-    error ? output = error : output = stdout.split()
-    res.render("pages/index", {
+    error ? output = error : output = stdout
+    res.render("pages/freeText", {
       output,
       input
     })

@@ -28,18 +28,16 @@ language = obj.detect_language()
 if language != "en":
   obj = obj.translate(from_lang= language, to='en')
 
-print(obj + " | ")
-
 # returns the sentiment of text
 # by returning a value between -1.0 and 1.0
 sentiment = obj.sentiment.polarity
 # print(sentiment)
 
 if sentiment == 0:
-  print('The text is neutral')
+  print('Neutro')
 elif sentiment > 0:
-  print('The text is positive')
+  print('Positivo')
 else:
-  print('The text is negative')
+  print('Negativo')
 
 # print("arquivo em python")

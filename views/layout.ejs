@@ -5,11 +5,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <meta name="theme-color" content="#0288D1">
+  <title>Análise de Sentimento</title>
   <!-- icon -->
   <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
-  <title>Análise de Sentimento</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
 </head>
 <body>
   <noscript>
@@ -44,8 +46,7 @@
             <v-list-item
               v-for="link in links"
               :key="link.text"
-              router
-              :to="link.route"
+              :href="link.route"
             >
               <v-list-item-avatar>
                 <v-icon class="white--text">{{ link.icon }}</v-icon>
@@ -68,47 +69,44 @@
         </v-dialog>
       </nav>
       
-      <v-content class="mx-10 mt-10">
-        <v-card class="px-6 py-6" style="height: 600px; text-align: center">
+      <v-content class="px-10 pt-10">
+        <v-flex class="pt-10" style="height: 600px;">
           <div>
             <%- card %>
           </div>
-        </v-card>
+        </v-flex>
         
       </v-content>
     </v-app>
   </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      vuetify: new Vuetify(),
-      data() {
-        return {
-          drawer: false,
-          links: [
-            { icon: "home", text: "Home", route: "/" },
-            { icon: "sentiment_satisfied_alt", text: "Não Sei", route: "/regular" },
-            { icon: "sentiment_satisfied_alt", text: "Sei Lá", route: "/conectar" }
-          ],
-          dialog: false,
-          input: "<%= input %>",
-        }
-      },
-      methods: {
-        draw() {
-          this.drawer = !this.drawer;
-        },
-        info() {
-          this.dialog = !this.dialog;
-        },
-        analyze() {
-          window.location.href = `/freeText/${this.input.replace(/\n/g,"%0D%0A")}` 
-        }
-      }
-    })
-  </script>
 </body>
+<script>
+  new Vue({
+    el: '#app',
+    vuetify: new Vuetify(),
+    data() {
+      return {
+        drawer: false,
+        links: [
+          { icon: "home", text: "Home", route: "/" },
+          { icon: "sentiment_satisfied_alt", text: "Análise Simples", route: "/freeText" },
+          { icon: "sentiment_satisfied_alt", text: "Sei Lá", route: "/conectar" }
+        ],
+        dialog: false,
+        input: "<%= input %>",
+      }
+    },
+    methods: {
+      draw() {
+        this.drawer = !this.drawer;
+      },
+      info() {
+        this.dialog = !this.dialog;
+      },
+      analyze() {
+        window.location.href = `/freeText/${this.input.replace(/\n/g,"%0D%0A")}` 
+      }
+    }
+  })
+</script>
 </html>
