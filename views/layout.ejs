@@ -105,7 +105,7 @@
           this.dialog = !this.dialog;
         },
         analyze() {
-          window.location.href = `/freeText/${this.input}` 
+          window.location.href = `/freeText/${this.input.replace(/\n/g,"%0D%0A")}` 
         }
       }
     })

@@ -8,10 +8,14 @@
       label="Insira a frase"
       v-model="input"
     ></v-textarea>
-  
+    
     saidaaaaaaaaaaaa:
     <v-spacer></v-spacer>
     <%= input %>
+    <v-textarea
+      class="mt-4 mb-10"
+      :placeholder="input"
+    ></v-textarea>
     <v-spacer></v-spacer>
     <%= output %>
   </v-card-text>

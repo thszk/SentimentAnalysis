@@ -5,7 +5,7 @@ const { exec } = require("child_process")
 const path = require("path")
 
 const app = express()
-app.use(bodyparser.json());
+app.use(bodyparser.json() );     
 const port = process.env.PORT || 3333
 
 app.set("view engine", "ejs")
@@ -25,13 +25,14 @@ app.get("/", (req, res) => {
 })
 
 app.get("/freeText/:input", (req, res) => {
-  exec(`echo "${req.params.input}" | ${path.resolve("./src/main.py")}`, (error, stdout) => {
-    let out
-    error ? out = error : out = stdout.split()
-
+  let input = JSON.stringify(req.params.input.replace(/%0D%0A/g,"\n")).replace(/\"/g,"")
+  
+  exec(`echo "${input}" | ${path.resolve("./src/main.py")}`, (error, stdout) => {
+    let output
+    error ? output = error : output = stdout.split()
     res.render("pages/index", {
-      output: out,
-      input : req.params.input
+      output,
+      input
     })
   })
 })

@@ -16,8 +16,14 @@ from newspaper import Article
 
 # text = article.summary
 # print(text)
+line = ""
+while True:
+    try:
+        line = line + "\n" + input()
+    except EOFError:
+        break
 
-obj = TextBlob(input())
+obj = TextBlob(line)
 # returns the sentiment of text
 # by returning a value between -1.0 and 1.0
 sentiment = obj.sentiment.polarity
