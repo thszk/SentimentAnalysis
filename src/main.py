@@ -18,10 +18,10 @@ from newspaper import Article
 # print(text)
 line = ""
 while True:
-    try:
-        line = line + "\n" + input()
-    except EOFError:
-        break
+  try:
+    line = line + "\n" + input()
+  except EOFError:
+    break
 
 obj = TextBlob(line)
 language = obj.detect_language()
