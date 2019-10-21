@@ -8,7 +8,11 @@
 - nltk v3.4.5
 - textblob v0.15.3
 
-Installation:
+### Installation:
+
+Run the script to install the dependencies ```$ sudo src/install-dependencies.sh```
+
+### Manual Installation:
 
 ```
   $ sudo apt install python3-pip -y
@@ -24,7 +28,9 @@ https://levelup.gitconnected.com/sentiment-analysis-using-machine-learning-pytho
 
 https://minerandodados.com.br/analise-de-sentimentos-de-uma-forma-diferente/
 
-https://stackoverflow.com/questions/39897505/python-and-node-js-on-heroku
+https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app
+
+https://devcenter.heroku.com/articles/python-pip
 
 
 ## TODO
