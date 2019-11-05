@@ -4,13 +4,15 @@
 
   <div class="mt-6">
     <v-card-text>Esta análise é feita usando a biblioteca TextBlob Classificação de Naive Bayes, com base em threads do Twitter de companhias aéreas.</v-card-text>
-    <!-- <v-card-text
-    >Pode-se consultar os exemplos: <a href="/freeText/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> <a href="/freeText/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
-    </v-card-text> -->
+    <v-card-text
+    >Pode-se consultar os exemplos: <a href="/airlineAnalysis/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> <a href="/airlineAnalysis/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
+    </v-card-text>
   </div>
 
   <v-card-text class="mb-6">
     <v-textarea
+      rows="1"
+      auto-grow
       class="mt-4 mb-10"
       label="Insira a frase"
       v-model="input"
