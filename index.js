@@ -44,3 +44,23 @@ app.get("/freeText/:input", (req, res) => {
     })
   })
 })
+
+app.get("/airlineAnalysis", (req, res) => {
+  res.render("pages/airlineAnalysis", {
+    output: "",
+    input: ""
+  })
+})
+
+app.get("/airlineAnalysis/:input", (req, res) => {
+  let input = JSON.stringify(req.params.input.replace(/%0D%0A/g,"\n")).replace(/\"/g,"")
+  
+  exec(`echo "${input}" | python3 ${path.resolve("./src/airline-analysis.py")}`, (error, stdout) => {
+    let output
+    error ? output = error : output = stdout
+    res.render("pages/airlineAnalysis", {
+      output,
+      input
+    })
+  })
+})

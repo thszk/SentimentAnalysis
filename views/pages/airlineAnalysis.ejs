@@ -1,12 +1,12 @@
 <%- contentFor('card') %>
 <div>
-  <v-card-title>Frases simples</v-card-title>
+  <v-card-title>Análise em linhas aéreas</v-card-title>
 
   <div class="mt-6">
-    <v-card-text>Esta análise é feita usando a biblioteca TextBlob e NLTK, pode ser inserido uma frase sobre comentário em filmes em qualquer idioma.</v-card-text>
-    <v-card-text
+    <v-card-text>Esta análise é feita usando a biblioteca TextBlob Classificação de Naive Bayes, com base nos comentários do Twitter da companhia aérea Virgin America.</v-card-text>
+    <!-- <v-card-text
     >Pode-se consultar os exemplos: <a href="/freeText/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> <a href="/freeText/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
-    </v-card-text>
+    </v-card-text> -->
   </div>
 
   <v-card-text class="mb-6">
@@ -27,12 +27,12 @@
     <v-btn
       class="blue-grey lighten-3 white--text"
       rounded
-      href="/freeText"
+      href="/airlineAnalysis"
     >Limpar</v-btn>
     <v-btn
       class="light-blue darken-2 white--text"
       rounded
-      @click="analyze('freeText')"
+      @click="analyze('airlineAnalysis')"
     >Analisar</v-btn>
     <v-spacer></v-spacer>
   </v-card-actions>

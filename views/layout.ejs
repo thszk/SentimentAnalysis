@@ -90,7 +90,7 @@
         links: [
           { icon: "home", text: "Home", route: "/" },
           { icon: "sentiment_satisfied_alt", text: "Análise Simples", route: "/freeText" },
-          { icon: "sentiment_satisfied_alt", text: "Sei Lá", route: "/conectar" }
+          { icon: "sentiment_satisfied_alt", text: "Análise com NB", route: "/airlineAnalysis" }
         ],
         dialog: false,
         input: "<%= input %>",
@@ -103,8 +103,8 @@
       info() {
         this.dialog = !this.dialog;
       },
-      analyze() {
-        window.location.href = `/freeText/${this.input.replace(/\n/g,"%0D%0A")}` 
+      analyze(route) {
+        window.location.href = `/${route}/${this.input.replace(/\n/g,"%0D%0A")}` 
       }
     }
   })
