@@ -17,11 +17,26 @@
       label="Insira a frase"
       v-model="input"
     ></v-textarea>
-    
-    <v-spacer></v-spacer>
-    Entrada: <%= input %>
-    <v-spacer></v-spacer>
-    Saída: <%= output %>
+    <!-- <v-layout justify-center> ALINHAMENTO NO CENTRO-->
+      <v-flex xs12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
+        <v-card class="mb-4">
+          <v-card-title>
+             Entrada
+          </v-card-title>
+          <v-card-text>
+            <%= input %>
+          </v-card-text>
+        </v-card>
+        <v-card class="mb-4">
+          <v-card-title>
+            Saída
+          </v-card-title>
+          <v-card-text>
+            <%= output %>
+          </v-card-text>
+        </v-card>
+      </v-flex>
+    <!-- </v-flex> -->
   </v-card-text>
 
   <v-card-actions>
