@@ -1,5 +1,7 @@
 # Sentiment Analysis
 
+This program was designed to provide a graphical interface for some Python Sentiment Analysis implementations.
+
 # Python programs
 
 The python programs was developed to serve a output processed from phrases provided of user in the [website](https://web-sentiment-analysis.herokuapp.com/).
@@ -34,9 +36,9 @@ Execute the commands bellow in terminal to install the dependencies individually
 
 In the development process the following materials were consulted:
 
-https://levelup.gitconnected.com/sentiment-analysis-using-machine-learning-python-9122e03f8f7b
+[Figure Eight](https://www.figure-eight.com/data-for-everyone/) website contain an list of open data sets
 
-https://minerandodados.com.br/analise-de-sentimentos-de-uma-forma-diferente/
+[Airline data set](https://d1p17r2m4rzlbo.cloudfront.net/wp-content/uploads/2016/03/Airline-Sentiment-2-w-AA.csv), here you can download the data set used in project
 
 [Multiple buildpacks for an App](https://devcenter.heroku.com/articles/using-multiple-buildpacks-for-an-app)
 
