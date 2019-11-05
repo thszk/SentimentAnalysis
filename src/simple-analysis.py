@@ -33,9 +33,7 @@ if language != "en":
 sentiment = obj.sentiment.polarity
 # print(sentiment)
 
-if sentiment == 0:
-  print('Neutro')
-elif sentiment > 0:
+if sentiment > 0:
   print('Positivo')
 else:
   print('Negativo')
