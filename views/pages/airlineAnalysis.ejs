@@ -1,54 +1,52 @@
 <%- contentFor('card') %>
 <div>
-  <v-card-title>Análise em linhas aéreas</v-card-title>
+  <v-flex xs12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
+    <v-card class="mb-6 mt-4">
+      <v-card-title class="mt-2 mb-2">Análise em linhas aéreas</v-card-title>
+      <!-- <div class="mt-6"> -->
+      <v-card-text>Esta análise é feita usando a biblioteca TextBlob Classificação de Naive Bayes, com base em threads do Twitter de companhias aéreas.</v-card-text>
+      <v-card-text
+      >
+        Pode-se consultar os exemplos:
+        <a href="/airlineAnalysis/united%20for%20the%20record-%20Rozana%20at%20Newark%20was%20lovely%20and%20helpful.%20#choosekind">Exemplo 1</a> | 
+        <a href="/airlineAnalysis/VirginAmerica%20my%20luggage%20is%20gone.%20I've%20filed%20my%20paperwork,%20promised%20a%20call%20email.%20Still%20no%20resolution%20or%20response%20from%20central%20luggage.">Exemplo 2</a> |
+        <a href="/airlineAnalysis/AmericanAir%20delayed%20on%20the%20way%20to%20Puerto%20Rico%20and%20delayed%20on%20the%20way%20back%20to%20New%20York%20this%20is%20disgraceful">Exemplo 3 - caso de erro</a>
+      </v-card-text>
+      <!-- </div> -->
+  
+      <v-card-text class="mb-4">
+        <v-textarea
+          rows="1"
+          auto-grow
+          class="mt-4"
+          label="Insira a frase"
+          v-model="input"
+        ></v-textarea>
+      </v-card-text>
+    </v-card>
+    
+    <v-card class="mb-6">
+      <v-card-title>Entrada</v-card-title>
+      <v-card-text><%= input %></v-card-text>
+    </v-card>
+    <v-card class="mb-6">
+      <v-card-title>Saída</v-card-title>
+      <v-card-text><%= output %></v-card-text>
+    </v-card>
 
-  <div class="mt-6">
-    <v-card-text>Esta análise é feita usando a biblioteca TextBlob Classificação de Naive Bayes, com base em threads do Twitter de companhias aéreas.</v-card-text>
-    <v-card-text
-    >Pode-se consultar os exemplos: <a href="/airlineAnalysis/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> <a href="/airlineAnalysis/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
-    </v-card-text>
-  </div>
-
-  <v-card-text class="mb-6">
-    <v-textarea
-      rows="1"
-      auto-grow
-      class="mt-4 mb-10"
-      label="Insira a frase"
-      v-model="input"
-    ></v-textarea>
-    <v-flex xs12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
-        <v-card class="mb-4">
-          <v-card-title>
-             Entrada
-          </v-card-title>
-          <v-card-text>
-            <%= input %>
-          </v-card-text>
-        </v-card>
-        <v-card class="mb-4">
-          <v-card-title>
-            Saída
-          </v-card-title>
-          <v-card-text>
-            <%= output %>
-          </v-card-text>
-        </v-card>
-      </v-flex>
-  </v-card-text>
-
-  <v-card-actions>
-    <v-spacer></v-spacer>
-    <v-btn
-      class="blue-grey lighten-3 white--text"
-      rounded
-      href="/airlineAnalysis"
-    >Limpar</v-btn>
-    <v-btn
-      class="light-blue darken-2 white--text"
-      rounded
-      @click="analyze('airlineAnalysis')"
-    >Analisar</v-btn>
-    <v-spacer></v-spacer>
-  </v-card-actions>
+    <v-card-actions>
+      <v-spacer></v-spacer>
+      <v-btn
+        class="blue-grey lighten-3 white--text"
+        rounded
+        href="/airlineAnalysis"
+      >Limpar</v-btn>
+      <v-btn
+        class="light-blue darken-2 white--text"
+        rounded
+        @click="analyze('airlineAnalysis')"
+      >Analisar</v-btn>
+      <v-spacer></v-spacer>
+    </v-card-actions>
+</v-flex>
 </div>

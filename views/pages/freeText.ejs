@@ -1,43 +1,37 @@
 <%- contentFor('card') %>
 <div>
-  <v-card-title>Frases simples</v-card-title>
+  <v-flex sx12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
+    <v-card class="mb-6 mt-4">
+      <v-card-title class="mt-2 mb-2">Frases simples</v-card-title>
+      <!-- <div class="mt-6"> -->
+      <v-card-text>Esta análise é feita usando a biblioteca TextBlob e NLTK, pode ser inserido uma frase sobre comentário em filmes em qualquer idioma.</v-card-text>
+      <v-card-text
+      >
+        Pode-se consultar os exemplos:
+        <a href="/freeText/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> | 
+        <a href="/freeText/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
+      </v-card-text>
+      <!-- </div> -->
 
-  <div class="mt-6">
-    <v-card-text>Esta análise é feita usando a biblioteca TextBlob e NLTK, pode ser inserido uma frase sobre comentário em filmes em qualquer idioma.</v-card-text>
-    <v-card-text
-    >Pode-se consultar os exemplos: <a href="/freeText/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> <a href="/freeText/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
-    </v-card-text>
-  </div>
-
-  <v-card-text class="mb-6">
-    <v-textarea
-      rows="1"
-      auto-grow
-      class="mt-4 mb-10"
-      label="Insira a frase"
-      v-model="input"
-    ></v-textarea>
-    <!-- <v-layout justify-center> ALINHAMENTO NO CENTRO-->
-      <v-flex xs12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
-        <v-card class="mb-4">
-          <v-card-title>
-             Entrada
-          </v-card-title>
-          <v-card-text>
-            <%= input %>
-          </v-card-text>
-        </v-card>
-        <v-card class="mb-4">
-          <v-card-title>
-            Saída
-          </v-card-title>
-          <v-card-text>
-            <%= output %>
-          </v-card-text>
-        </v-card>
-      </v-flex>
-    <!-- </v-flex> -->
-  </v-card-text>
+      <v-card-text class="mb-4">
+        <v-textarea
+          rows="1"
+          auto-grow
+          class="mt-4"
+          label="Insira a frase"
+          v-model="input"
+        ></v-textarea>
+      </v-card-text>
+    </v-card>
+    
+    <v-card class="mb-6">
+      <v-card-title>Entrada</v-card-title>
+      <v-card-text><%= input %></v-card-text>
+    </v-card>
+    <v-card class="mb-6">
+      <v-card-title>Saída</v-card-title>
+      <v-card-text><%= output %></v-card-text>
+    </v-card>
 
   <v-card-actions>
     <v-spacer></v-spacer>
@@ -52,5 +46,6 @@
       @click="analyze('freeText')"
     >Analisar</v-btn>
     <v-spacer></v-spacer>
-  </v-card-actions>
+    </v-card-actions>
+  </v-flex>
 </div>

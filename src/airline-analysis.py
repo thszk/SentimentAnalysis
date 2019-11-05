@@ -37,4 +37,4 @@ classifier = NaiveBayesClassifier(train)
 # print("Acuracia:", classifier.accuracy(train))
 
 # classifying
-print(classifier.classify(dataset[1100]))
+print(classifier.classify(line))
