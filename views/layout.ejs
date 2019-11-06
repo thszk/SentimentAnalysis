@@ -28,7 +28,14 @@
           ></v-app-bar-nav-icon>
       
           <v-toolbar-title class="text-uppercase white--text">
-            <v-btn href="/" text rounded x-large class="white--text">
+            <v-btn 
+              href="/"
+              @click="load=true"
+              text
+              rounded
+              x-large
+              class="white--text"
+            >
               <span class="font-weight-light">Análise de&nbsp;</span>
               <span>Sentimento</span>
             </v-btn>
@@ -47,6 +54,7 @@
               v-for="link in links"
               :key="link.text"
               :href="link.route"
+              @click="load=true"
             >
               <v-list-item-avatar>
                 <v-icon class="white--text">{{ link.icon }}</v-icon>
@@ -71,12 +79,23 @@
       
       <v-content class="px-10 pt-10">
         <v-flex class="pt-10" style="height: 600px;">
-          <div>
+          <div v-if="!load">
             <%- card %>
           </div>
         </v-flex>
         
       </v-content>
+      <!-- loading animation -->
+      <v-container v-if="load" fluid style="position: absolute; top: 50%;">
+        <v-layout align-center justify-center>     
+          <v-progress-circular
+            style="height: 100px; width: 100px;"
+            class="ml-2"
+            indeterminate
+            color="primary"
+          ></v-progress-circular>
+        </v-layout>
+        </v-container>
     </v-app>
   </div>
 </body>
@@ -94,6 +113,7 @@
         ],
         dialog: false,
         input: "<%= input %>",
+        load: true,
       }
     },
     methods: {
@@ -104,8 +124,15 @@
         this.dialog = !this.dialog;
       },
       analyze(route) {
-        window.location.href = `/${route}/${this.input.replace(/\n/g,"%0D%0A")}` 
+        window.location.href = `/${route}/${this.input.replace(/\n/g,"%0D%0A")}`;
+      },
+      example(route,eg) {
+        this.load = true;
+        window.location.href = `/${route}/${eg}`;
       }
+    },
+    mounted() {
+      this.load = false;
     }
   })
 </script>

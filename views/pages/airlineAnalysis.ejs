@@ -1,5 +1,5 @@
 <%- contentFor('card') %>
-<div>
+<div v-if="!load">
   <v-flex xs12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
     <v-card class="mb-6 mt-4">
       <v-card-title class="mt-2 mb-2">Análise em linhas aéreas</v-card-title>
@@ -8,9 +8,27 @@
       <v-card-text
       >
         Pode-se consultar os exemplos:
-        <a href="/airlineAnalysis/united%20for%20the%20record-%20Rozana%20at%20Newark%20was%20lovely%20and%20helpful.%20#choosekind">Exemplo 1</a> | 
-        <a href="/airlineAnalysis/VirginAmerica%20my%20luggage%20is%20gone.%20I've%20filed%20my%20paperwork,%20promised%20a%20call%20email.%20Still%20no%20resolution%20or%20response%20from%20central%20luggage.">Exemplo 2</a> |
-        <a href="/airlineAnalysis/AmericanAir%20delayed%20on%20the%20way%20to%20Puerto%20Rico%20and%20delayed%20on%20the%20way%20back%20to%20New%20York%20this%20is%20disgraceful">Exemplo 3 - caso de erro</a>
+        <v-btn 
+          class="ml-2"
+          text
+          small
+          href="/airlineAnalysis/united%20for%20the%20record-%20Rozana%20at%20Newark%20was%20lovely%20and%20helpful.%20#choosekind"
+          @click="load=true"
+        >Exemplo 1</v-btn>
+        <v-btn 
+          class="ml-2"
+          text
+          small
+          href="/airlineAnalysis/VirginAmerica%20my%20luggage%20is%20gone.%20I've%20filed%20my%20paperwork,%20promised%20a%20call%20email.%20Still%20no%20resolution%20or%20response%20from%20central%20luggage."
+          @click="load=true"
+        >Exemplo 2</v-btn>
+        <v-btn
+          class="ml-2"
+          text
+          small
+          href="/airlineAnalysis/AmericanAir%20delayed%20on%20the%20way%20to%20Puerto%20Rico%20and%20delayed%20on%20the%20way%20back%20to%20New%20York%20this%20is%20disgraceful"
+          @click="load=true"
+        >Exemplo 3 - caso de erro</v-btn>
       </v-card-text>
       <!-- </div> -->
   

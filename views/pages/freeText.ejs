@@ -1,6 +1,6 @@
 <%- contentFor('card') %>
-<div>
-  <v-flex sx12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
+<div v-if="!load">
+  <v-flex xs12 lg12> <!-- xs4 lg4 TAMANHO DO CARD -->
     <v-card class="mb-6 mt-4">
       <v-card-title class="mt-2 mb-2">Frases simples</v-card-title>
       <!-- <div class="mt-6"> -->
@@ -8,8 +8,20 @@
       <v-card-text
       >
         Pode-se consultar os exemplos:
-        <a href="/freeText/Esse%20filme%20é%20muito%20bom">Exemplo 1</a> | 
-        <a href="/freeText/Esse%20filme%20é%20muito%20ruim">Exemplo 2</a>
+        <v-btn 
+          class="ml-2"
+          text
+          small
+          href="/freeText/Esse%20filme%20é%20muito%20bom"
+          @click="load=true"
+        >Exemplo 1</v-btn>
+        <v-btn 
+          class="ml-2"
+          text
+          small
+          href="/freeText/Esse%20filme%20é%20muito%20ruim"
+          @click="load=true"
+        >Exemplo 2</v-btn>
       </v-card-text>
       <!-- </div> -->
 
