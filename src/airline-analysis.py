@@ -2,11 +2,15 @@
 
 # libs
 import csv
+import nltk
 from textblob.classifiers import NaiveBayesClassifier
 
 # vars
 dataset = []
 train = []
+
+# settungs
+nltk.download('punkt')
 
 # get inline parameter
 line = ""
