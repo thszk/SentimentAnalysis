@@ -1,21 +1,22 @@
 #!/usr/bin/env python3
 
+# libs
 import nltk
 from textblob import TextBlob
 from newspaper import Article
 
-# Get the article
-# url = 'https://everythingcomputerscience.com/'
-# article = Article(url)
+# returns the sentiment of text
+def analysis(obj):
+  sentiment = obj.sentiment.polarity
+  # print(sentiment)
+  if sentiment == 0:
+    print('Neutro')
+  elif sentiment > 0:
+    print('Positivo')
+  else:
+    print('Negativo')
 
-# # Do some NLP
-# article.download() # Downloads the link’s HTML content
-# article.parse() # Parse the article
-# nltk.download('punkt') # 1 time download of the sentence tokenizer
-# article.nlp()
-
-# text = article.summary
-# print(text)
+# read inline parameter
 line = ""
 while True:
   try:
@@ -24,20 +25,17 @@ while True:
     break
 
 obj = TextBlob(line)
+
+# detect input language
 language = obj.detect_language()
+
+# translate if necessary
 if language != "en":
-  obj = obj.translate(from_lang= language, to='en')
-
-# returns the sentiment of text
-# by returning a value between -1.0 and 1.0
-sentiment = obj.sentiment.polarity
-# print(sentiment)
-
-if sentiment == 0:
-  print('Neutro')
-elif sentiment > 0:
-  print('Positivo')
+  try:
+    obj = obj.translate(from_lang= language, to='en')
+    analysis(obj)
+  except:
+    # if not possible translate
+    print('Translation failed!')
 else:
-  print('Negativo')
-
-# print("arquivo em python")
+  analysis(obj)

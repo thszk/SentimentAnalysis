@@ -17,7 +17,7 @@ while True:
     break
 
 # read csv file
-with open('src/Airline-Sentiment-2-w-AA.csv', 'r', encoding="ISO-8859-1") as csvFile:
+with open('src/resources/Airline-Sentiment-2-w-AA.csv', 'r', encoding="ISO-8859-1") as csvFile:
 	reader = csv.reader(csvFile)
 	# append rows in dataset array
 	for row in reader:
