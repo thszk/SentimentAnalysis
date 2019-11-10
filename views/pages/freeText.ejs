@@ -2,12 +2,12 @@
 <div>
   <v-flex>
     <v-card class="mb-6 mt-4">
-      <v-card-title class="mt-2 mb-2">Frases simples</v-card-title>
+      <v-card-title class="mt-2 mb-2">Simple Analysis</v-card-title>
       <!-- <div class="mt-6"> -->
-      <v-card-text>Esta análise é feita usando a biblioteca TextBlob e NLTK, pode ser inserido uma frase sobre comentário em filmes em qualquer idioma.</v-card-text>
+      <v-card-text>This implementation is done using the TextBlob and NLTK library. A commentary on movies can be entered in any language as long as it is recognized by the google translator.</v-card-text>
       <v-card-text
       >
-        Pode-se consultar os exemplos:
+        Examples:
         <v-btn 
           class="ml-2"
           text
@@ -15,7 +15,7 @@
           small
           href="/freeText/Esse%20filme%20é%20muito%20bom"
           @click="load=true"
-        >Exemplo 1</v-btn>
+        >1</v-btn>
         <v-btn 
           class="ml-2"
           text
@@ -23,7 +23,7 @@
           small
           href="/freeText/Esse%20filme%20é%20muito%20ruim"
           @click="load=true"
-        >Exemplo 2</v-btn>
+        >2</v-btn>
       </v-card-text>
       <!-- </div> -->
 
@@ -32,18 +32,18 @@
           rows="1"
           auto-grow
           class="mt-4"
-          label="Insira a frase"
+          label="Enter the phrase"
           v-model="input"
         ></v-textarea>
       </v-card-text>
     </v-card>
     
     <v-card class="mb-6">
-      <v-card-title>Entrada</v-card-title>
+      <v-card-title>Input</v-card-title>
       <v-card-text><%= input %></v-card-text>
     </v-card>
     <v-card class="mb-6">
-      <v-card-title>Saída</v-card-title>
+      <v-card-title>Output</v-card-title>
       <v-card-text><%= output %></v-card-text>
     </v-card>
 
@@ -53,12 +53,13 @@
       class="blue-grey lighten-3 white--text"
       rounded
       href="/freeText"
-    >Limpar</v-btn>
+      @click="load=true"
+    >Clean</v-btn>
     <v-btn
       class="light-blue darken-2 white--text"
       rounded
       @click="analyze('freeText')"
-    >Analisar</v-btn>
+    >Analyze</v-btn>
     <v-spacer></v-spacer>
     </v-card-actions>
   </v-flex>
