@@ -18,6 +18,7 @@ app.listen(port, () => {
 })
 
 // routes
+// home
 app.get("/", (req, res) => {
   res.render("pages/home", {
     output: "",
@@ -25,6 +26,7 @@ app.get("/", (req, res) => {
   })
 })
 
+// free text
 app.get("/freeText", (req, res) => {
   res.render("pages/freeText", {
     output: "",
@@ -32,6 +34,7 @@ app.get("/freeText", (req, res) => {
   })
 })
 
+// free text result
 app.get("/freeText/:input", (req, res) => {
   let input = JSON.stringify(req.params.input.replace(/%0D%0A/g,"\n")).replace(/\"/g,"")
   
@@ -45,6 +48,7 @@ app.get("/freeText/:input", (req, res) => {
   })
 })
 
+// airline analysis
 app.get("/airlineAnalysis", (req, res) => {
   res.render("pages/airlineAnalysis", {
     output: "",
@@ -52,6 +56,7 @@ app.get("/airlineAnalysis", (req, res) => {
   })
 })
 
+// airline analysis result
 app.get("/airlineAnalysis/:input", (req, res) => {
   let input = JSON.stringify(req.params.input.replace(/%0D%0A/g,"\n")).replace(/\"/g,"")
   
