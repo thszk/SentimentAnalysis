@@ -6,15 +6,15 @@ from textblob import TextBlob
 from newspaper import Article
 
 # returns the sentiment of text
-def analysis(obj):
+def analyze(obj):
   sentiment = obj.sentiment.polarity
   # print(sentiment)
   if sentiment == 0:
-    print('Neutro')
+    print('Neutral')
   elif sentiment > 0:
-    print('Positivo')
+    print('Positive')
   else:
-    print('Negativo')
+    print('Negative')
 
 # read inline parameter
 line = ""
@@ -33,9 +33,9 @@ language = obj.detect_language()
 if language != "en":
   try:
     obj = obj.translate(from_lang= language, to='en')
-    analysis(obj)
+    analyze(obj)
   except:
     # if not possible translate
     print('Translation failed!')
 else:
-  analysis(obj)
+  analyze(obj)
