@@ -2,34 +2,41 @@
 
 This program was designed to provide a graphical interface for some Python Sentiment Analysis implementations.
 
-# Python programs
 
-The python programs was developed to serve a output processed from phrases provided of user in the [website](https://web-sentiment-analysis.herokuapp.com/).
+## Usage
 
-## Dependencies
+For a better experience it is advisable to use the site to avoid issues of installation and configurations.
 
+Available in: https://web-sentiment-analysis.herokuapp.com/
+
+
+## Local Usage
+
+To use this website in localhost is necessary install the dependencies below:
+
+- Node.js v10.x or later (With npm v6.x or later)
 - python v3.7.3 (Usually already installed on linux distros)
 - pip v18.1
-- newspaper3k v0.2.8
 - nltk v3.4.5
 - textblob v0.15.3
 
+
 ### Installation:
 
-Run the script to install the dependencies ```$ sudo src/install-dependencies.sh```
+Run the script from root project directory to install the dependencies: ```$ sudo src/resources/install-dependencies.sh```.
 
-### Manual Installation:
+OR
 
-Execute the commands bellow in terminal to install the dependencies individually:
+If you prefer, execute the commands bellow in terminal to install the dependencies individually:
 
 ```
+  $ curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+  $ sudo apt install -y nodejs
   $ sudo apt install python3-pip -y
   $ pip3 install newspaper3k
   $ pip3 install nltk
   $ pip3 install textblob
 ```
-
-# Site usage
 
 
 ## References
