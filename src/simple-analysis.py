@@ -3,7 +3,6 @@
 # libs
 import nltk
 from textblob import TextBlob
-from newspaper import Article
 
 # returns the sentiment of text
 def analyze(obj):
