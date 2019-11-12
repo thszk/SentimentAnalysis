@@ -58,6 +58,47 @@ To start server:
 To open the site, click on link in terminal or access ``` http://localhost:3333/ ``` in the browser.
 
 
+## Developers
+
+Thiago Suzuqui Lodi | contact: ra165478@ucdb.br
+
+André Luiz Santana Treu Afonso | contact: ra166034@ucdb.br
+
+João Luiz Aguiar Takayama | contact: ra165631@ucdb.br
+
+
+## Directory structure
+
+```
+SentimentAnalysis/
+│
+├── node_modules/ - created after run $ npm install, this directory contains dependencies and cache from the Node.js
+│
+├── src/
+│   ├── resources/
+│   │   ├── Airline-Sentiment-2-w-AA.csv - dataset file
+│   │   ├── install-dependencies.sh - dependencies installation script
+│   │   └── nbclassifier - file to store python objects
+│   │
+│   ├── airline-analysis.py - airline sentiment analysis
+│   ├── airline-training.py - training file to the airline sentiment analysis
+│   └── simple-analysis.py - simple sentiment analysis
+│
+├── views/
+|   ├── pages/
+│   │   ├── airlineAnalysis.ejs - these files will be injected by the server in the layout.ejs
+│   │   ├── freeText.ejs
+│   │   └── home.ejs
+│   │
+│   └── layout.ejs - contains the main HTML from the site
+│
+├── index.js - entry point from the application
+├── package-lock.json - version control from the Node.js dependencies
+├── package.json - contains information about the Node.js project, necessary dependencies and npm scripts
+└── requirements.txt - additional libs installed by the heroku server
+```
+
+
 ## References
 
 In the development process the following materials were consulted:
