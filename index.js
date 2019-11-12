@@ -14,7 +14,7 @@ app.use(expressLayouts)
 
 // creating server
 app.listen(port, () => {
-  console.log(`Servidor rodando na porta ${port}`)
+  console.log(`Server running on port ${port}`)
 })
 
 // routes
