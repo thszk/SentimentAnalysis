@@ -16,7 +16,6 @@ app.use(expressLayouts)
 function train() {
   try {
     console.log("Training Analyzer");
-    execSync(`ulimit -m 512000`)
     execSync(`python3 ${path.resolve("./src/airline-training.py")}`)
     console.log("Successfully trained")
   } catch (error) {
@@ -29,6 +28,10 @@ train()
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
   console.log(`Access: http://localhost:${port}/`)
+
+  Console.log("Training Analyzer");
+  execSync(`python3 ${path.resolve("./src/airline-training.py")}`)
+  console.log("Successfully trained")
 })
 
 // routes
