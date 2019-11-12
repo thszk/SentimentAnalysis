@@ -41,7 +41,7 @@ If you prefer, execute the commands bellow in terminal to install the dependenci
 
 ### Execution
 
-After installing all dependencies, you need to make some settings to run the site. Run the commands below from root project directory:
+After installing all dependencies, you need to run the commands below from root project directory:
 
 To install Node.js dependencies:
 
