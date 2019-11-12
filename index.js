@@ -22,7 +22,7 @@ function train() {
     console.log(error)
   }
 }
-train()
+// train()
 
 // creating server
 app.listen(port, () => {
