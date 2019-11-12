@@ -19,7 +19,7 @@ function train() {
     execSync(`python3 ${path.resolve("./src/airline-training.py")}`)
     console.log("Successfully trained")
   } catch (error) {
-    train()
+    console.log(error)
   }
 }
 train()
