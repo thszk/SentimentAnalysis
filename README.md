@@ -1,18 +1,18 @@
 # Sentiment Analysis
 
-This program was designed to provide a graphical interface for some Python Sentiment Analysis implementations.
+This program was created to provide a graphical interface for Python Sentiment Analysis implementations.
 
 
-## Usage
+## Web Usage
 
-For a better experience it is advisable to use the site to avoid issues of installation and configurations.
+For a better experience is recommended to use the site to prevent issues of installation and configurations.
 
 Available in: https://web-sentiment-analysis.herokuapp.com/
 
 
 ## Local Usage
 
-To use this website in localhost is necessary install the dependencies below:
+To use this website in localhost is necessary to install the dependencies below:
 
 - Node.js v10.x or later (With npm v6.x or later)
 - python v3.7.3 (Usually already installed on linux distros)
@@ -37,6 +37,25 @@ If you prefer, execute the commands bellow in terminal to install the dependenci
   $ pip3 install nltk
   $ pip3 install textblob
 ```
+
+
+### Execution
+
+After installing all dependencies, you need to make some settings to run the site. Run the commands below from root project directory:
+
+To install Node.js dependencies:
+
+```
+  $ npm install
+```
+
+To start server:
+
+```
+  $ npm run start
+```
+
+To open the site, click on link in terminal or access ``` http://localhost:3333/ ``` in the browser.
 
 
 ## References
