@@ -16,7 +16,7 @@ app.use(expressLayouts)
 function train() {
   try {
     console.log("Training Analyzer");
-    execSync(`ulimit -m 1024000`)
+    execSync(`ulimit -m 512000`)
     execSync(`python3 ${path.resolve("./src/airline-training.py")}`)
     console.log("Successfully trained")
   } catch (error) {
