@@ -2,7 +2,7 @@
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const bodyparser = require("body-parser")
-const { exec } = require("child_process")
+const { execSync } = require("child_process")
 const path = require("path")
 
 // preparing to create server
@@ -11,6 +11,18 @@ const port = process.env.PORT || 3333
 app.use(bodyparser.json())
 app.set("view engine", "ejs")
 app.use(expressLayouts)
+
+// training airline analysis
+function train() {
+  try {
+    console.log("Training Analyzer");
+    execSync(`python3 ${path.resolve("./src/airline-training.py")}`)
+    console.log("Successfully trained")
+  } catch (error) {
+    train()
+  }
+}
+train()
 
 // creating server
 app.listen(port, () => {
