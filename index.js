@@ -22,16 +22,12 @@ function train() {
     console.log(error)
   }
 }
-// train()
+train()
 
 // creating server
 app.listen(port, () => {
   console.log(`Server running on port ${port}`)
   console.log(`Access: http://localhost:${port}/`)
-
-  console.log("Training Analyzer");
-  execSync(`python3 ${path.resolve("./src/airline-training.py")}`)
-  console.log("Successfully trained")
 })
 
 // routes
