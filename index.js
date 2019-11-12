@@ -2,7 +2,7 @@
 const express = require("express")
 const expressLayouts = require("express-ejs-layouts")
 const bodyparser = require("body-parser")
-const { execSync } = require("child_process")
+const { exec, execSync } = require("child_process")
 const path = require("path")
 
 // preparing to create server
