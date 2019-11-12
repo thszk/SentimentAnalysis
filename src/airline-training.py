@@ -24,7 +24,7 @@ with open('src/resources/Airline-Sentiment-2-w-AA.csv', 'r', encoding="ISO-8859-
 csvFile.close()
 
 # create training array
-for i in range(2000):
+for i in range(1000):
 	training.append(dataset[i])
 
 # training
