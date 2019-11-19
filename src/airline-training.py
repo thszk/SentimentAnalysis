@@ -33,5 +33,3 @@ classifier = NaiveBayesClassifier(training)
 # save NB classifier object in text file
 with open('src/resources/nbclassifier', 'wb') as file:
   pickle.dump(classifier, file)
-
-# print("Acuracia:", classifier.accuracy(training))
