@@ -10,7 +10,7 @@ from textblob.classifiers import NaiveBayesClassifier
 dataset = []
 training = []
 
-# settungs
+# settings
 nltk.download('punkt')
 
 # read csv file
