@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# This code was designed to train the Naive Bayes Classifier with texts from airline dataset
+# and save the trained object on file in resources/ directory to be used from airline-analysis.py code.
+
 # libs
 import csv
 import nltk
@@ -20,7 +23,7 @@ with open('src/resources/Airline-Sentiment-2-w-AA.csv', 'r', encoding="ISO-8859-
 	for row in reader:
 		dataset.append((row[14],row[5]))
 
-# close csv  file
+# close csv file
 csvFile.close()
 
 # create training array

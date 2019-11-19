@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 
+# This code was designed to learn how to handle a Sentiment Analysis with TextBlob library.
+
 # libs
 from textblob import TextBlob
 

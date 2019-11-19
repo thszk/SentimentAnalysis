@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 
+# This code was designed to analyze the sentiments of airline discussions on Twitter
+# the trained object is read from exported file by airline-training.py code.
+
 # libs
 import pickle
 
