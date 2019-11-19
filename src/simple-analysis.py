@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 # libs
-import nltk
 from textblob import TextBlob
 
 # returns the sentiment of text
