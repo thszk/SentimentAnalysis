@@ -10,6 +10,19 @@ For a better experience is recommended to use the site to prevent issues of inst
 Available in: https://web-sentiment-analysis.herokuapp.com/
 
 
+### About the Website
+
+The home page contains a brief description of the usage.
+
+In the upper right corner is an information icon where you can see the developers and github where the source code is located.
+
+In the upper left corner there is a menu that has two options, Simple Analysis and Naive B. Classifier.
+
+In the Simple Analysis a Python program was created that basically analyzes a feeling contained in any sentence, using the polarization of the words that form the sentence. The library used was TextBlob that performs sorting based on its own word vector. The code from this feature has been available in ```src / simple-analysis.py```. This page contains a brief deion about it, and below it has two example buttons, these examples show a phrase that will appear inside the Input label and its classification will be within the Output label. If the user wants to add his own sentence, there is a textfield named "Enter the phrase" that receive a text to be classified. The text can be written in any language as long as it is recognized by the google translator. After entering the text, there is a button named "Analyze" that parses that text. Next to this button has a "Clear" button to clear the entered text, input and output results.
+
+The Naive B. Classifier implements a sentence analysis of the Twitter discussion dataset about airline, using the Naive Bayes Classification technique implemented by the TextBlob library. This technique is a probabilistic classifier, which carries the name "naive" because do the analysis disregarding the correlation between words of the text or phrase, for example, if a car labeled "Gol" and also described as "Black", the algorithm doesn't care about the relationship between the two words since the analysis is done independently. In this page you will find a brief description, below this, there are 3 examples that can be tested by clicking on they. This implementation is available in ```src / airline-training.py``` and ```src / airline-analysis.py```, where the first file is responsible for classifier training and the second for analysis. The input text can be written only in English.
+
+
 ## Local Usage
 
 To use this website in localhost is necessary to install the dependencies below:

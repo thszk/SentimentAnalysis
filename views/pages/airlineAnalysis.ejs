@@ -2,15 +2,15 @@
 <div>
   <v-flex>
     <v-card class="mb-6 mt-4">
-      <v-card-title class="mt-2 mb-2">Airlines Analysis</v-card-title>
+      <v-card-title class="mt-2 mb-2">Naive Bayes Classifier</v-card-title>
       <!-- <div class="mt-6"> -->
-      <v-card-text>This analysis is done using the Naive Bayes Classifier from the TextBlob library, based on airline Twitter topics.</v-card-text>
+      <v-card-text>This analysis is done using the Naive Bayes Classifier from the TextBlob library, using the Twitter discussion dataset about airlines mentioned on <a target="_blank" href="https://github.com/thszk/SentimentAnalysis/blob/master/README.md">documentation</a>. The input text can be written only in English.</v-card-text>
+      <v-card-text></v-card-text>
       <v-card-text
       >
-        Example:
+        Look at usage examples by clicking on buttons:
         <v-btn 
           class="ml-2"
-          text
           rounded
           small
           href="/airlineAnalysis/united%20for%20the%20record-%20Rozana%20at%20Newark%20was%20lovely%20and%20helpful.%20#choosekind"
@@ -18,7 +18,6 @@
         >1</v-btn>
         <v-btn 
           class="ml-2"
-          text
           rounded
           small
           href="/airlineAnalysis/VirginAmerica%20my%20luggage%20is%20gone.%20I've%20filed%20my%20paperwork,%20promised%20a%20call%20email.%20Still%20no%20resolution%20or%20response%20from%20central%20luggage."
@@ -26,7 +25,6 @@
         >2</v-btn>
         <v-btn
           class="ml-2"
-          text
           rounded
           small
           href="/airlineAnalysis/AmericanAir%20delayed%20on%20the%20way%20to%20Puerto%20Rico%20and%20delayed%20on%20the%20way%20back%20to%20New%20York%20this%20is%20disgraceful"
@@ -46,14 +44,17 @@
       </v-card-text>
     </v-card>
     
-    <v-card class="mb-6">
-      <v-card-title>Input</v-card-title>
-      <v-card-text><%= input %></v-card-text>
-    </v-card>
-    <v-card class="mb-6">
-      <v-card-title>Output</v-card-title>
-      <v-card-text><%= output %></v-card-text>
-    </v-card>
+    <v-card class="py-6 px-6 mb-6">
+        <v-card-title>Analysis Result</v-card-title>
+        <v-card class="mb-6">
+          <v-card-title>Input</v-card-title>
+          <v-card-text><%= input %></v-card-text>
+        </v-card>
+        <v-card class="mb-6">
+          <v-card-title>Output</v-card-title>
+          <v-card-text><%= output %></v-card-text>
+        </v-card>
+      </v-card>
 
     <v-card-actions>
       <v-spacer></v-spacer>
